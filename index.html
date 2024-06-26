@@ -151,11 +151,24 @@
             <p class="bg-gray-100 p-4 rounded-lg shadow">Address: Locunduff, 29390 Scaër, France</p>
         </section>
     </main>
-
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const experienceItems = document.querySelectorAll('.experience-item');
+
+            experienceItems.forEach(item => {
+                item.addEventListener('mouseenter', function () {
+                    this.style.transform = 'scale(1.1)';
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
         function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
         }
     </script>
+
 </body>
 </html>
