@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #738678; /* Xanadu color */
+            background-color: #738678; /* Updated background color to Xanadu */
         }
         .profile-img {
             width: 150px;
@@ -21,12 +21,35 @@
             @apply text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4;
         }
         .btn {
-            @apply bg-gradient-to-r from-green-400 to-blue-500 text-white py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105;
+            @apply bg-gradient-to-r from-green-400 to-blue-500 text-white py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105; /* Added transition and transform */
+        }
+        .container {
+            display: flex;
+            flex-wrap: nowrap; /* Ensure sections are not wrapped */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scroll-snap-type: x mandatory; /* Snap to each section */
+        }
+        .container > section {
+            flex: 0 0 auto; /* Non-flexing, fixed width */
+            width: 100%; /* Full width of container */
+            scroll-snap-align: start; /* Align to start of container */
+            margin-right: 16px; /* Add margin between sections */
+        }
+        .container > section:last-child {
+            margin-right: 0; /* No margin on last section */
+        }
+        .container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+        .header {
+            background-color: #738678; /* Xanadu color for header */
+            background-image: linear-gradient(to right, #738678, #5c6d66); /* Gradient for header */
         }
     </style>
 </head>
 <body>
-    <header class="bg-gradient-to-r from-green-400 to-blue-500 text-white py-6 mb-10 shadow-lg">
+    <header class="header text-white py-6 mb-10 shadow-lg">
         <div class="container mx-auto text-center">
             <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img mx-auto">
             <h1 class="text-4xl font-bold">Pierre Sinquin</h1>
@@ -44,7 +67,6 @@
             <h2 class="section-title">Profile 👨‍🔬</h2>
             <p>Curious, motivated and determined, I'm actively looking for employment after my Master’s degree in Bioinformatics, particularly in research for new technologies of bioinformatics, as well as in sustainable development. The issues and problems that your team faces touch me and I would be delighted to take part in them.</p>
         </section>
-
         <section id="experience" class="mb-8">
             <h2 class="section-title">Experience 💼</h2>
             <ul class="list-none space-y-4">
