@@ -5,45 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pierre Sinquin - Bioinformatics</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f9fafb;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            @apply text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-    <header class="bg-gray-800 text-white py-6 mb-10">
-        <h1 class="text-center text-4xl font-bold">Pierre Sinquin</h1>
+<body>
+    <header class="bg-gradient-to-r from-green-400 to-blue-500 text-white py-6 mb-10 shadow-lg">
+        <div class="container mx-auto text-center">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img mx-auto">
+            <h1 class="text-4xl font-bold">Pierre Sinquin</h1>
+            <p class="text-xl mt-2">Bioinformatics Specialist</p>
+        </div>
     </header>
-    <div class="container mx-auto p-4 bg-white rounded-lg shadow-lg">
+    <main class="container mx-auto p-4 bg-white rounded-lg shadow-lg">
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Profile</h2>
-            <p>Curious, motivated and determine d, I'm actively looking for employment after my Master’s degree in Bioinformatics, particularly in research for new technologies of bioinformatics, as well as in sustainable development. The issues and problems that your team faces touch me and I would be delighted to take part in them.</p>
+            <h2 class="section-title">Profile</h2>
+            <p>Curious, motivated and determined, I'm actively looking for employment after my Master’s degree in Bioinformatics, particularly in research for new technologies of bioinformatics, as well as in sustainable development. The issues and problems that your team faces touch me and I would be delighted to take part in them.</p>
         </section>
 
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Experience</h2>
+            <h2 class="section-title">Experience</h2>
             <ul class="list-none space-y-4">
                 <li class="bg-gray-100 p-4 rounded-lg shadow">
-                    <strong>Programmer, EMBL-EBI, Cambridge — Fev-Aug 2024</strong>
+                    <strong class="text-lg">Programmer, EMBL-EBI, Cambridge — Fev-Aug 2024</strong>
                     <p>Intern in the Reactome team. My mission is to create a pipeline enhancing Reactome's biological pathway visualisations by integrating AlphaFold-predicted protein structures and physical interaction predictions. A project realised using Nextflow, Neo4j, and Mol*.</p>
                 </li>
                 <li class="bg-gray-100 p-4 rounded-lg shadow">
-                    <strong>Programmer, NuMeCan, Rennes — May-Aug 2023</strong>
+                    <strong class="text-lg">Programmer, NuMeCan, Rennes — May-Aug 2023</strong>
                     <p>Intern in the NuMeCan Mether pole. We set up a web interface for integrating metabolic data from a set of bacteria studied in the laboratory. Translated as an application simulating the cultivation of bacteria. This has been made with Neo4j, the Django framework and BioCyc, Reactome and SMPDB databases.</p>
                 </li>
                 <li class="bg-gray-100 p-4 rounded-lg shadow">
-                    <strong>Programmer, Biotrial, Rennes — 2021-2022</strong>
+                    <strong class="text-lg">Programmer, Biotrial, Rennes — 2021-2022</strong>
                     <p>Intern in the Biotrial biometrics pole. I did Data Visualisation on Business Object with clinical data from Medidata. I set up a tool allowing the monitoring of data during the study. In parallel, I developed data consistency checks with SAS.</p>
                 </li>
                 <li class="bg-gray-100 p-4 rounded-lg shadow">
-                    <strong>Programmer, DDEC-29, Quimper — Jan-Feb 2021</strong>
+                    <strong class="text-lg">Programmer, DDEC-29, Quimper — Jan-Feb 2021</strong>
                     <p>Adaptation of the Pedagogical Animation Plan to the web framework, Laravel, for the DDEC of Finistère. It is a registration platform for training courses for teachers from the 1st and 2nd degree.</p>
                 </li>
                 <li class="bg-gray-100 p-4 rounded-lg shadow">
-                    <strong>Summer jobs, Ker Cadélac and Greencap, Brittany FR — Summer 2018 to 2021</strong>
+                    <strong class="text-lg">Summer jobs, Ker Cadélac and Greencap, Brittany FR — Summer 2018 to 2021</strong>
                     <p>Manual work in the Ker Cadélac factory. Work in the fields, maintenance of fir trees for winter season at Greencap.</p>
                 </li>
             </ul>
         </section>
 
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Studies</h2>
+            <h2 class="section-title">Studies</h2>
             <ul class="list-none space-y-2">
                 <li class="bg-gray-100 p-4 rounded-lg shadow">Rennes 1, Rennes FR — Master’s degree Bio-informatics, 2022-2024</li>
                 <li class="bg-gray-100 p-4 rounded-lg shadow">University Institute of Technology, Vannes FR — Professional degree, Statistics and informatics for health, 2022</li>
@@ -53,7 +73,7 @@
         </section>
 
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Skills</h2>
+            <h2 class="section-title">Skills</h2>
             <ul class="list-none space-y-2">
                 <li class="bg-gray-100 p-4 rounded-lg shadow">Web and software development</li>
                 <li class="bg-gray-100 p-4 rounded-lg shadow">Statistics and computer science applied to health</li>
@@ -62,7 +82,7 @@
         </section>
 
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Software Skills</h2>
+            <h2 class="section-title">Software Skills</h2>
             <ul class="list-none space-y-2">
                 <li class="bg-gray-100 p-4 rounded-lg shadow">Laravel, Django, HTML, CSS, PHP, SQL, Cypher</li>
                 <li class="bg-gray-100 p-4 rounded-lg shadow">TypeScript, JavaScript</li>
@@ -74,7 +94,7 @@
         </section>
 
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Fields of Interest</h2>
+            <h2 class="section-title">Fields of Interest</h2>
             <ul class="list-none space-y-2">
                 <li class="bg-gray-100 p-4 rounded-lg shadow">Football (R3), running, surfing, climbing, swimming, judo (competitions)</li>
                 <li class="bg-gray-100 p-4 rounded-lg shadow">World cuisine, eco-citizenship, underground rap music, art galleries</li>
@@ -82,12 +102,11 @@
         </section>
 
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Contact</h2>
+            <h2 class="section-title">Contact</h2>
             <p class="bg-gray-100 p-4 rounded-lg shadow">Phone: 06 66 38 30 24</p>
             <p class="bg-gray-100 p-4 rounded-lg shadow">Email: sinquin.pierre1@gmail.com</p>
             <p class="bg-gray-100 p-4 rounded-lg shadow">Address: Locunduff, 29390 Scaër, France</p>
         </section>
-    </div>
+    </main>
 </body>
 </html>
-
