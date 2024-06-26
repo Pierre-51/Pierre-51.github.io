@@ -4,131 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pierre Sinquin - Bioinformatics</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-            background: #fff;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-        }
-        .section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .section ul li {
-            background: #f4f4f4;
-            margin: 5px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Pierre Sinquin</h1>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-gray-800 text-white py-6 mb-10">
+        <h1 class="text-center text-4xl font-bold">Pierre Sinquin</h1>
     </header>
-    <div class="container">
-        <section class="section">
-            <h2>Profile</h2>
+    <div class="container mx-auto p-4 bg-white rounded-lg shadow-lg">
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Profile</h2>
             <p>Curious, motivated and determined, I'm actively looking for employment after my Master’s degree in Bioinformatics, particularly in research for new technologies of bioinformatics, as well as in sustainable development. The issues and problems that your team faces touch me and I would be delighted to take part in them.</p>
         </section>
 
-        <section class="section">
-            <h2>Experience</h2>
-            <ul>
-                <li>
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Experience</h2>
+            <ul class="list-none space-y-4">
+                <li class="bg-gray-100 p-4 rounded-lg shadow">
                     <strong>Programmer, EMBL-EBI, Cambridge — Fev-Aug 2024</strong>
                     <p>Intern in the Reactome team. My mission is to create a pipeline enhancing Reactome's biological pathway visualisations by integrating AlphaFold-predicted protein structures and physical interaction predictions. A project realised using Nextflow, Neo4j, and Mol*.</p>
                 </li>
-                <li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">
                     <strong>Programmer, NuMeCan, Rennes — May-Aug 2023</strong>
                     <p>Intern in the NuMeCan Mether pole. We set up a web interface for integrating metabolic data from a set of bacteria studied in the laboratory. Translated as an application simulating the cultivation of bacteria. This has been made with Neo4j, the Django framework and BioCyc, Reactome and SMPDB databases.</p>
                 </li>
-                <li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">
                     <strong>Programmer, Biotrial, Rennes — 2021-2022</strong>
                     <p>Intern in the Biotrial biometrics pole. I did Data Visualisation on Business Object with clinical data from Medidata. I set up a tool allowing the monitoring of data during the study. In parallel, I developed data consistency checks with SAS.</p>
                 </li>
-                <li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">
                     <strong>Programmer, DDEC-29, Quimper — Jan-Feb 2021</strong>
                     <p>Adaptation of the Pedagogical Animation Plan to the web framework, Laravel, for the DDEC of Finistère. It is a registration platform for training courses for teachers from the 1st and 2nd degree.</p>
                 </li>
-                <li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">
                     <strong>Summer jobs, Ker Cadélac and Greencap, Brittany FR — Summer 2018 to 2021</strong>
                     <p>Manual work in the Ker Cadélac factory. Work in the fields, maintenance of fir trees for winter season at Greencap.</p>
                 </li>
             </ul>
         </section>
 
-        <section class="section">
-            <h2>Studies</h2>
-            <ul>
-                <li>Rennes 1, Rennes FR — Master’s degree Bio-informatics, 2022-2024</li>
-                <li>University Institute of Technology, Vannes FR — Professional degree, Statistics and informatics for health, 2022</li>
-                <li>BTS, Rennes FR — IT services for organisations, 2021</li>
-                <li>High School of Cornouaille, Quimper FR — Baccalaureate, 2019</li>
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Studies</h2>
+            <ul class="list-none space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg shadow">Rennes 1, Rennes FR — Master’s degree Bio-informatics, 2022-2024</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">University Institute of Technology, Vannes FR — Professional degree, Statistics and informatics for health, 2022</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">BTS, Rennes FR — IT services for organisations, 2021</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">High School of Cornouaille, Quimper FR — Baccalaureate, 2019</li>
             </ul>
         </section>
 
-        <section class="section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Web and software development</li>
-                <li>Statistics and computer science applied to health</li>
-                <li>Bioinformatics</li>
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Skills</h2>
+            <ul class="list-none space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg shadow">Web and software development</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">Statistics and computer science applied to health</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">Bioinformatics</li>
             </ul>
         </section>
 
-        <section class="section">
-            <h2>Software Skills</h2>
-            <ul>
-                <li>Laravel, Django, HTML, CSS, PHP, SQL, Cypher</li>
-                <li>TypeScript, JavaScript</li>
-                <li>SPAD, SAS, Medidata, RStudio, Business Objects</li>
-                <li>Java, Python, C#, Snakemake, Nextflow, Bash</li>
-                <li>Web and Object language</li>
-                <li>Statistics and Data Management tools</li>
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Software Skills</h2>
+            <ul class="list-none space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg shadow">Laravel, Django, HTML, CSS, PHP, SQL, Cypher</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">TypeScript, JavaScript</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">SPAD, SAS, Medidata, RStudio, Business Objects</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">Java, Python, C#, Snakemake, Nextflow, Bash</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">Web and Object language</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">Statistics and Data Management tools</li>
             </ul>
         </section>
 
-        <section class="section">
-            <h2>Fields of Interest</h2>
-            <ul>
-                <li>Football (R3), running, surfing, climbing, swimming, judo (competitions)</li>
-                <li>World cuisine, eco-citizenship, underground rap music, art galleries</li>
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Fields of Interest</h2>
+            <ul class="list-none space-y-2">
+                <li class="bg-gray-100 p-4 rounded-lg shadow">Football (R3), running, surfing, climbing, swimming, judo (competitions)</li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow">World cuisine, eco-citizenship, underground rap music, art galleries</li>
             </ul>
         </section>
 
-        <section class="section">
-            <h2>Contact</h2>
-            <p>Phone: 06 66 38 30 24</p>
-            <p>Email: sinquin.pierre1@gmail.com</p>
-            <p>Address: Locunduff, 29390 Scaër, France</p>
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4">Contact</h2>
+            <p class="bg-gray-100 p-4 rounded-lg shadow">Phone: 06 66 38 30 24</p>
+            <p class="bg-gray-100 p-4 rounded-lg shadow">Email: sinquin.pierre1@gmail.com</p>
+            <p class="bg-gray-100 p-4 rounded-lg shadow">Address: Locunduff, 29390 Scaër, France</p>
         </section>
     </div>
 </body>
 </html>
+
