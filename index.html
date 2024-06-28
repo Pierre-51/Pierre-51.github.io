@@ -5,29 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pierre Sinquin - Bioinformatics</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         #experience ul {
             display: flex;
-            flex-wrap: wrap; /* Allows items to wrap to the next line */
-            gap: 1rem; /* Gap between items */
-            list-style-type: none; /* Remove default list styles */
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style-type: none;
             padding: 0;
             margin: 0;
         }
-
         .experience-item {
-            flex: 1 0 300px; /* Each item will take up equal space, adjust as needed */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
-            margin-bottom: 1rem; /* Space between rows */
+            flex: 1 0 300px;
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 1rem;
         }
-
         .experience-item:hover {
-            transform: scale(1.1); /* Scale up on hover */
-            cursor: pointer; /* Change cursor to pointer on hover */
+            transform: scale(1.1);
+            cursor: pointer;
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #738678; /* Updated background color to Xanadu */
+            background-color: #738678;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #2d2d2d;
+            color: #e0e0e0;
         }
         .profile-img {
             width: 150px;
@@ -40,154 +44,183 @@
             @apply text-2xl font-semibold border-b-2 border-gray-800 pb-2 mb-4;
         }
         .btn {
-            @apply bg-gradient-to-r from-green-400 to-blue-500 text-white py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105; /* Added transition and transform */
+            @apply bg-gradient-to-r from-green-400 to-blue-500 text-white py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105;
         }
         .header {
-            background-color: #738678; /* Xanadu color for header */
-            background-image: linear-gradient(to right, #738678, #5c6d66); /* Gradient for header */
+            background-color: #738678;
+            background-image: linear-gradient(to right, #738678, #5c6d66);
         }
-        .experience-item {
-            transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+        .skills-item:hover {
+            background-color: #5c6d66;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-
-        .experience-item:hover {
-            transform: scale(1.1); /* Scale up on hover */
-            cursor: pointer; /* Change cursor to pointer on hover */
+        .typewriter h1 {
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
         }
     </style>
 </head>
 <body>
-    <header class="header text-white py-6 mb-10 shadow-lg">
-        <div class="container mx-auto text-center">
-            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img mx-auto">
-            <h1 class="text-4xl font-bold">Pierre Sinquin</h1>
-            <p class="text-xl mt-2">Bioinformatics Specialist</p>
-            <div class="mt-4">
-                <button onclick="scrollToSection('profile')" class="btn mx-2">📜 Profile</button>
-                <button onclick="scrollToSection('experience')" class="btn mx-2">💼 Experience</button>
-                <button onclick="scrollToSection('contact')" class="btn mx-2">📞 Contact</button>
-                <a href="ressources/EN-Resumé.pdf" download="PierreSinquin_Resume" class="btn mx-2">📄 Download Resume</a>
-            </div>
+<header class="header text-white py-6 mb-10 shadow-lg">
+    <div class="container mx-auto text-center">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img mx-auto">
+        <div class="typewriter">
+            <h1>Pierre Sinquin - Bioinformatics Specialist</h1>
         </div>
-    </header>
-    <main class="container mx-auto p-4 rounded-lg shadow-lg grid grid-cols-1 gap-4">
-        <section id="profile" class="mb-8">
-            <h2 class="section-title">Profile 👨‍🔬</h2>
-            <p>Curious, motivated and determined, I'm actively looking for employment after my Master’s degree in Bioinformatics, particularly in research for new technologies of bioinformatics, as well as in sustainable development. The issues and problems that your team faces touch me and I would be delighted to take part in them.</p>
-        </section>
-        <section id="experience" class="mb-8">
-            <h2 class="section-title">Experience 💼</h2>
-            <ul class="list-none space-y-2">
-                <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
-                    <strong class="text-lg">Programmer, EMBL-EBI, Cambridge — Fev-Aug 2024</strong>
-                    <p>Intern in the Reactome team. My mission is to create a pipeline enhancing Reactome's biological pathway visualisations by integrating AlphaFold-predicted protein structures and physical interaction predictions. A project realised using Nextflow, Neo4j, and Mol*.</p>
-                </li>
-                <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
-                    <strong class="text-lg">Programmer, NuMeCan, Rennes — May-Aug 2023</strong>
-                    <p>Intern in the NuMeCan Mether pole. We set up a web interface for integrating metabolic data from a set of bacteria studied in the laboratory. Translated as an application simulating the cultivation of bacteria. This has been made with Neo4j, the Django framework and BioCyc, Reactome and SMPDB databases.</p>
-                </li>
-                <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
-                    <strong class="text-lg">Programmer, Biotrial, Rennes — 2021-2022</strong>
-                    <p>Intern in the Biotrial biometrics pole. I did Data Visualisation on Business Object with clinical data from Medidata. I set up a tool allowing the monitoring of data during the study. In parallel, I developed data consistency checks with SAS.</p>
-                </li>
-                <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
-                    <strong class="text-lg">Programmer, DDEC-29, Quimper — Jan-Feb 2021</strong>
-                    <p>Adaptation of the Pedagogical Animation Plan to the web framework, Laravel, for the DDEC of Finistère. It is a registration platform for training courses for teachers from the 1st and 2nd degree.</p>
-                </li>
-                <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
-                    <strong class="text-lg">Summer jobs, Ker Cadélac and Greencap, Brittany FR — Summer 2018 to 2021</strong>
-                    <p>Manual work in the Ker Cadélac factory. Work in the fields, maintenance of fir trees for winter season at Greencap.</p>
-                </li>
-<!--        <section id="experience" class="mb-8">-->
-<!--            <h2 class="section-title">Experience 💼</h2>-->
-<!--            <ul class="list-none space-y-4">-->
-<!--                <li class="bg-gray-100 p-4 rounded-lg shadow">-->
-<!--                    <strong class="text-lg">Programmer, EMBL-EBI, Cambridge — Fev-Aug 2024</strong>-->
-<!--                    <p>Intern in the Reactome team. My mission is to create a pipeline enhancing Reactome's biological pathway visualisations by integrating AlphaFold-predicted protein structures and physical interaction predictions. A project realised using Nextflow, Neo4j, and Mol*.</p>-->
-<!--                </li>-->
-<!--                <li class="bg-gray-100 p-4 rounded-lg shadow">-->
-<!--                    <strong class="text-lg">Programmer, NuMeCan, Rennes — May-Aug 2023</strong>-->
-<!--                    <p>Intern in the NuMeCan Mether pole. We set up a web interface for integrating metabolic data from a set of bacteria studied in the laboratory. Translated as an application simulating the cultivation of bacteria. This has been made with Neo4j, the Django framework and BioCyc, Reactome and SMPDB databases.</p>-->
-<!--                </li>-->
-<!--                <li class="bg-gray-100 p-4 rounded-lg shadow">-->
-<!--                    <strong class="text-lg">Programmer, Biotrial, Rennes — 2021-2022</strong>-->
-<!--                    <p>Intern in the Biotrial biometrics pole. I did Data Visualisation on Business Object with clinical data from Medidata. I set up a tool allowing the monitoring of data during the study. In parallel, I developed data consistency checks with SAS.</p>-->
-<!--                </li>-->
-<!--                <li class="bg-gray-100 p-4 rounded-lg shadow">-->
-<!--                    <strong class="text-lg">Programmer, DDEC-29, Quimper — Jan-Feb 2021</strong>-->
-<!--                    <p>Adaptation of the Pedagogical Animation Plan to the web framework, Laravel, for the DDEC of Finistère. It is a registration platform for training courses for teachers from the 1st and 2nd degree.</p>-->
-<!--                </li>-->
-<!--                <li class="bg-gray-100 p-4 rounded-lg shadow">-->
-<!--                    <strong class="text-lg">Summer jobs, Ker Cadélac and Greencap, Brittany FR — Summer 2018 to 2021</strong>-->
-<!--                    <p>Manual work in the Ker Cadélac factory. Work in the fields, maintenance of fir trees for winter season at Greencap.</p>-->
-<!--                </li>-->
-            </ul>
-        </section>
+        <div class="mt-4">
+            <button onclick="scrollToSection('profile')" class="btn mx-2">📜 Profile</button>
+            <button onclick="scrollToSection('experience')" class="btn mx-2">💼 Experience</button>
+            <button onclick="scrollToSection('contact')" class="btn mx-2">📞 Contact</button>
+            <a href="ressources/EN-Resumé.pdf" download="PierreSinquin_Resume" class="btn mx-2">📄 Download Resume</a>
+            <button onclick="toggleDarkMode()" class="btn mx-2">🌓 Toggle Dark Mode</button>
+        </div>
+    </div>
+</header>
+<main class="container mx-auto p-4 rounded-lg shadow-lg grid grid-cols-1 gap-4">
+    <section id="profile" class="mb-8">
+        <h2 class="section-title">Profile 👨‍🔬</h2>
+        <p>Curious, motivated and determined, I'm actively looking for employment after my Master’s degree in Bioinformatics, particularly in research for new technologies of bioinformatics, as well as in sustainable development. The issues and problems that your team faces touch me and I would be delighted to take part in them.</p>
+    </section>
+    <section id="experience" class="mb-8">
+        <h2 class="section-title">Experience 💼</h2>
+        <ul class="list-none space-y-2">
+            <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
+                <strong class="text-lg">Programmer, EMBL-EBI, Cambridge — Fev-Aug 2024</strong>
+                <p>Intern in the Reactome team. My mission is to create a pipeline enhancing Reactome's biological pathway visualisations by integrating AlphaFold-predicted protein structures and physical interaction predictions. A project realised using Nextflow, Neo4j, and Mol*.</p>
+            </li>
+            <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
+                <strong class="text-lg">Programmer, NuMeCan, Rennes — May-Aug 2023</strong>
+                <p>Intern in the NuMeCan Mether pole. We set up a web interface for integrating metabolic data from a set of bacteria studied in the laboratory. Translated as an application simulating the cultivation of bacteria. This has been made with Neo4j, the Django framework and BioCyc, Reactome and SMPDB databases.</p>
+            </li>
+            <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
+                <strong class="text-lg">Programmer, Biotrial, Rennes — 2021-2022</strong>
+                <p>Intern in the Biotrial biometrics pole. I did Data Visualisation on Business Object with clinical data from Medidata. I set up a tool allowing the monitoring of data during the study. In parallel, I developed data consistency checks with SAS.</p>
+            </li>
+            <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
+                <strong class="text-lg">Programmer, DDEC-29, Quimper — Jan-Feb 2021</strong>
+                <p>Adaptation of the Pedagogical Animation Plan to the web framework, Laravel, for the DDEC of Finistère. It is a registration platform for training courses for teachers from the 1st and 2nd degree.</p>
+            </li>
+            <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
+                <strong class="text-lg">Summer jobs, Ker Cadélac and Greencap, Brittany FR — Summer 2018 to 2021</strong>
+                <p>Manual work in the Ker Cadélac factory. Work in the fields, maintenance of fir trees for winter season at Greencap.</p>
+            </li>
+        </ul>
+    </section>
 
-        <section id="studies" class="mb-8">
-            <h2 class="section-title">Studies 🎓</h2>
-            <ul class="list-none space-y-2">
-                <li class="bg-gray-100 p-4 rounded-lg shadow">Rennes 1, Rennes FR — Master’s degree Bio-informatics, 2022-2024</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">University Institute of Technology, Vannes FR — Professional degree, Statistics and informatics for health, 2022</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">BTS, Rennes FR — IT services for organisations, 2021</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">High School of Cornouaille, Quimper FR — Baccalaureate, 2019</li>
-            </ul>
-        </section>
+    <section id="studies" class="mb-8">
+        <h2 class="section-title">Studies 🎓</h2>
+        <ul class="list-none space-y-2">
+            <li class="bg-gray-100 p-4 rounded-lg shadow">Rennes 1, Rennes FR — Master’s degree Bio-informatics, 2022-2024</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">University Institute of Technology, Vannes FR — Professional degree, Statistics and informatics for health, 2022</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">BTS, Rennes FR — IT services for organisations, 2021</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">High School of Cornouaille, Quimper FR — Baccalaureate, 2019</li>
+        </ul>
+    </section>
 
-        <section id="skills" class="mb-8">
-            <h2 class="section-title">Skills 🛠️</h2>
-            <ul class="list-none space-y-2">
-                <li class="bg-gray-100 p-4 rounded-lg shadow">Web and software development</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">Statistics and computer science applied to health</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">Bioinformatics</li>
-            </ul>
-        </section>
+    <section id="skills" class="mb-8">
+        <h2 class="section-title">Skills 🛠️</h2>
+        <ul class="list-none space-y-2">
+            <li class="bg-gray-100 p-4 rounded-lg shadow skills-item">Web and software development</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow skills-item">Statistics and computer science applied to health</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow skills-item">Bioinformatics</li>
+        </ul>
+    </section>
 
-        <section id="software-skills" class="mb-8">
-            <h2 class="section-title">Software Skills 💻</h2>
-            <ul class="list-none space-y-2">
-                <li class="bg-gray-100 p-4 rounded-lg shadow">Laravel, Django, HTML, CSS, PHP, SQL, Cypher</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">TypeScript, JavaScript</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">SPAD, SAS, Medidata, RStudio, Business Objects</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">Java, Python, C#, Snakemake, Nextflow, Bash</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">Web and Object language</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">Statistics and Data Management tools</li>
-            </ul>
-        </section>
+    <section id="software-skills" class="mb-8">
+        <h2 class="section-title">Software Skills 💻</h2>
+        <canvas id="softwareSkillsChart" class="mb-4"></canvas>
+        <ul class="list-none space-y-2">
+            <li class="bg-gray-100 p-4 rounded-lg shadow">Laravel, Django, HTML, CSS, PHP, SQL, Cypher</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">TypeScript, JavaScript</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">SPAD, SAS, Medidata, RStudio, Business Objects</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">Java, Python, C#, Snakemake, Nextflow, Bash</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">Web and Object language</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">Statistics and Data Management tools</li>
+        </ul>
+    </section>
 
-        <section id="interests" class="mb-8">
-            <h2 class="section-title">Fields of Interest 🌱</h2>
-            <ul class="list-none space-y-2">
-                <li class="bg-gray-100 p-4 rounded-lg shadow">Football (R3), running, surfing, climbing, swimming, judo (competitions)</li>
-                <li class="bg-gray-100 p-4 rounded-lg shadow">World cuisine, eco-citizenship, underground rap music, art galleries</li>
-            </ul>
-        </section>
+    <section id="interests" class="mb-8">
+        <h2 class="section-title">Fields of Interest 🌱</h2>
+        <ul class="list-none space-y-2">
+            <li class="bg-gray-100 p-4 rounded-lg shadow">Football (R3), running, surfing, climbing, swimming, judo (competitions)</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">World cuisine, eco-citizenship, underground rap music, art galleries</li>
+        </ul>
+    </section>
 
-        <section id="contact" class="mb-8">
-            <h2 class="section-title">Contact 📞</h2>
-            <p class="bg-gray-100 p-4 rounded-lg shadow">Phone: 06 66 38 30 24</p>
-            <p class="bg-gray-100 p-4 rounded-lg shadow">Email: sinquin.pierre1@gmail.com</p>
-            <p class="bg-gray-100 p-4 rounded-lg shadow">Address: Locunduff, 29390 Scaër, France</p>
-        </section>
-    </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const experienceItems = document.querySelectorAll('.experience-item');
+    <section id="fun-facts" class="mb-8">
+        <h2 class="section-title">Fun Facts 🎉</h2>
+        <ul class="list-none space-y-2">
+            <li class="bg-gray-100 p-4 rounded-lg shadow">I once ran a marathon dressed as a banana 🍌</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">I'm a self-taught guitarist 🎸</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow">I have a collection of over 100 rare vinyl records 🎶</li>
+        </ul>
+    </section>
 
-            experienceItems.forEach(item => {
-                item.addEventListener('mouseenter', function () {
-                    this.style.transform = 'scale(1.1)';
-                });
+    <section id="contact" class="mb-8">
+        <h2 class="section-title">Contact 📞</h2>
+        <p class="bg-gray-100 p-4 rounded-lg shadow">Phone: 06 66 38 30 24</p>
+        <p class="bg-gray-100 p-4 rounded-lg shadow">Email: sinquin.pierre1@gmail.com</p>
+        <p class="bg-gray-100 p-4 rounded-lg shadow">Address: Locunduff, 29390 Scaër, France</p>
+    </section>
+</main>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const experienceItems = document.querySelectorAll('.experience-item');
 
-                item.addEventListener('mouseleave', function () {
-                    this.style.transform = 'scale(1)';
-                });
+        experienceItems.forEach(item => {
+            item.addEventListener('mouseenter', function () {
+                this.style.transform = 'scale(1.1)';
+            });
+
+            item.addEventListener('mouseleave', function () {
+                this.style.transform = 'scale(1)';
             });
         });
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
-        }
-    </script>
 
+        const ctx = document.getElementById('softwareSkillsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Laravel', 'Django', 'HTML', 'CSS', 'PHP', 'SQL', 'Cypher', 'TypeScript', 'JavaScript', 'SPAD', 'SAS', 'Medidata', 'RStudio', 'Business Objects', 'Java', 'Python', 'C#', 'Snakemake', 'Nextflow', 'Bash'],
+                datasets: [{
+                    label: 'Proficiency Level',
+                    data: [7, 8, 9, 9, 7, 8, 7, 8, 9, 6, 7, 7, 8, 6, 8, 9, 7, 6, 7, 8],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+    }
+</script>
 </body>
 </html>
