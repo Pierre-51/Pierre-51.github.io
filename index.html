@@ -72,6 +72,13 @@
             from, to { border-color: transparent }
             50% { border-color: orange; }
         }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -91,11 +98,11 @@
     </div>
 </header>
 <main class="container mx-auto p-4 rounded-lg shadow-lg grid grid-cols-1 gap-4">
-    <section id="profile" class="mb-8">
+    <section id="profile" class="mb-8 fade-in">
         <h2 class="section-title">Profile 👨‍🔬</h2>
         <p>Curious, motivated and determined, I'm actively looking for employment after my Master’s degree in Bioinformatics, particularly in research for new technologies of bioinformatics, as well as in sustainable development. The issues and problems that your team faces touch me and I would be delighted to take part in them.</p>
     </section>
-    <section id="experience" class="mb-8">
+    <section id="experience" class="mb-8 fade-in">
         <h2 class="section-title">Experience 💼</h2>
         <ul class="list-none space-y-2">
             <li class="experience-item bg-gray-100 p-4 rounded-lg shadow">
@@ -121,7 +128,7 @@
         </ul>
     </section>
 
-    <section id="studies" class="mb-8">
+    <section id="studies" class="mb-8 fade-in">
         <h2 class="section-title">Studies 🎓</h2>
         <ul class="list-none space-y-2">
             <li class="bg-gray-100 p-4 rounded-lg shadow">Rennes 1, Rennes FR — Master’s degree Bio-informatics, 2022-2024</li>
@@ -131,16 +138,16 @@
         </ul>
     </section>
 
-    <section id="skills" class="mb-8">
+    <section id="skills" class="mb-8 fade-in">
         <h2 class="section-title">Skills 🛠️</h2>
         <ul class="list-none space-y-2">
-            <li class="bg-gray-100 p-4 rounded-lg shadow skills-item">Web and software development</li>
-            <li class="bg-gray-100 p-4 rounded-lg shadow skills-item">Statistics and computer science applied to health</li>
-            <li class="bg-gray-100 p-4 rounded-lg shadow skills-item">Bioinformatics</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow skills-item" onclick="updateChart('Web and software development')">Web and software development</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow skills-item" onclick="updateChart('Statistics and computer science applied to health')">Statistics and computer science applied to health</li>
+            <li class="bg-gray-100 p-4 rounded-lg shadow skills-item" onclick="updateChart('Bioinformatics')">Bioinformatics</li>
         </ul>
     </section>
 
-    <section id="software-skills" class="mb-8">
+    <section id="software-skills" class="mb-8 fade-in">
         <h2 class="section-title">Software Skills 💻</h2>
         <canvas id="softwareSkillsChart" class="mb-4"></canvas>
         <ul class="list-none space-y-2">
@@ -153,7 +160,7 @@
         </ul>
     </section>
 
-    <section id="interests" class="mb-8">
+    <section id="interests" class="mb-8 fade-in">
         <h2 class="section-title">Fields of Interest 🌱</h2>
         <ul class="list-none space-y-2">
             <li class="bg-gray-100 p-4 rounded-lg shadow">Football (R3), running, surfing, climbing, swimming, judo (competitions)</li>
@@ -161,7 +168,7 @@
         </ul>
     </section>
 
-    <section id="fun-facts" class="mb-8">
+    <section id="fun-facts" class="mb-8 fade-in">
         <h2 class="section-title">Fun Facts 🎉</h2>
         <ul class="list-none space-y-2">
             <li class="bg-gray-100 p-4 rounded-lg shadow">I once ran a marathon dressed as a banana 🍌</li>
@@ -170,7 +177,7 @@
         </ul>
     </section>
 
-    <section id="contact" class="mb-8">
+    <section id="contact" class="mb-8 fade-in">
         <h2 class="section-title">Contact 📞</h2>
         <p class="bg-gray-100 p-4 rounded-lg shadow">Phone: 06 66 38 30 24</p>
         <p class="bg-gray-100 p-4 rounded-lg shadow">Email: sinquin.pierre1@gmail.com</p>
@@ -191,19 +198,21 @@
             });
         });
 
+        const softwareSkillsData = {
+            labels: ['Laravel', 'Django', 'HTML', 'CSS', 'PHP', 'SQL', 'Cypher', 'TypeScript', 'JavaScript', 'SPAD', 'SAS', 'Medidata', 'RStudio', 'Business Objects', 'Java', 'Python', 'C#', 'Snakemake', 'Nextflow', 'Bash'],
+            datasets: [{
+                label: 'Proficiency Level',
+                data: [7, 8, 9, 9, 7, 8, 7, 8, 9, 6, 7, 7, 8, 6, 8, 9, 7, 6, 7, 8],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        };
+
         const ctx = document.getElementById('softwareSkillsChart').getContext('2d');
-        new Chart(ctx, {
+        const softwareSkillsChart = new Chart(ctx, {
             type: 'bar',
-            data: {
-                labels: ['Laravel', 'Django', 'HTML', 'CSS', 'PHP', 'SQL', 'Cypher', 'TypeScript', 'JavaScript', 'SPAD', 'SAS', 'Medidata', 'RStudio', 'Business Objects', 'Java', 'Python', 'C#', 'Snakemake', 'Nextflow', 'Bash'],
-                datasets: [{
-                    label: 'Proficiency Level',
-                    data: [7, 8, 9, 9, 7, 8, 7, 8, 9, 6, 7, 7, 8, 6, 8, 9, 7, 6, 7, 8],
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
+            data: softwareSkillsData,
             options: {
                 scales: {
                     y: {
@@ -212,6 +221,29 @@
                 }
             }
         });
+
+        window.updateChart = function (skill) {
+            let filteredData = [];
+            switch (skill) {
+                case 'Web and software development':
+                    filteredData = ['Laravel', 'Django', 'HTML', 'CSS', 'PHP', 'SQL', 'Cypher', 'TypeScript', 'JavaScript'];
+                    break;
+                case 'Statistics and computer science applied to health':
+                    filteredData = ['SPAD', 'SAS', 'Medidata', 'RStudio', 'Business Objects'];
+                    break;
+                case 'Bioinformatics':
+                    filteredData = ['Java', 'Python', 'C#', 'Snakemake', 'Nextflow', 'Bash'];
+                    break;
+            }
+
+            const filteredIndices = filteredData.map(skill => softwareSkillsData.labels.indexOf(skill));
+            const newLabels = filteredData;
+            const newData = filteredIndices.map(index => softwareSkillsData.datasets[0].data[index]);
+
+            softwareSkillsChart.data.labels = newLabels;
+            softwareSkillsChart.data.datasets[0].data = newData;
+            softwareSkillsChart.update();
+        }
     });
 
     function toggleDarkMode() {
